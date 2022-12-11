@@ -1,16 +1,177 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Harsh Rajendra Khapre.</title> 
-</head>
-<body style="background: linear-gradient(to right, pink, orange);">
-<h1 style="color: royalblue;"><marquee> Harsh Rajendra Khapre.</marquee></h1>
-<p>Hay There!<br>My Name Is <b>Harsh Rajendra Khapre</b>. I'm Living In Nagpur.I'm Pursuing Degree In Mechnical Engineering From S.B.Jain Institute Of Technology,Management And Research. Just I'm At Third year Of Engineering.</p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Home_HARSH_KHAPRE.</title>
+
+        <script type="text/javascript">
+						function verify()
+								{
+									var f_name = document.getElementById("f_name");
+									var l_name = document.getElementById("l_name");
+									var gender = document.getElementsByName("gender");
+									var depart = document.getElementById("depart");
+									var email = document.getElementById("email");
+									var pass = document.getElementById("pass");
+									var msg = new Array();
+									var flag = 1;
+									var message = "Following Details are Required\n";
+									var message2 = "Following Details are Required<br>";
+									if(f_name.value == "")
+									{
+										msg[0] = "First Name is Required";
+										flag = 0;
+									} else { msg[0] = ""; }
+									
+									if(l_name.value == "")
+									{
+										msg[1] = "Last Name is Required";
+										flag = 0;
+									} else { msg[1] = ""; }
+									
+									if(gender[0].checked == false && gender[1].checked == false)
+									{
+										msg[2] = "Select Gender";
+										flag = 0;
+									} else { msg[2] = ""; }
+										
+									if(pass.value == "")
+									{
+										msg[3] = "Password is Required";
+										flag = 0;
+									} else { msg[3] = ""; }
+									
+									if(email.value == "")
+									{
+										msg[4] = "Email is Required";
+										flag = 0;
+									} else { msg[4] = ""; }
+									
+
+									if(pass.value.length < 8)
+									{
+										msg[5] = "Password must be 8 characters long";
+										flag = 0;
+									} else { msg[5] = ""; }
+									
+									if(flag == 0)
+									{
+										// Show Error Messages
+										for(var x=0;x<=5;x++)
+										{
+											if(msg[x] != "")
+											{
+												message += msg[x] + "\n";
+												message2 += msg[x] + "<br>";
+											}
+										}
+										alert(message);
+										document.getElementById("abc").innerHTML = "<p style='color:red;'>"+message2+"</p>";
+										return false;
+									}
+									else
+									{
+										alert("Successfully Submited!");
+										return true;
+									}
+								}
+		</script>
+  </head>
+  <body>
+			<!-- Navigation Bar Start-->
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			  <div class="container-fluid">
+				    <a class="navbar-brand" href="#">Harsh_Khapre.</a>
+					    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					    <span class="navbar-toggler-icon"></span>
+			    		</button>
+			    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+					    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						        <li class="nav-item">
+						          <a class="nav-link active" aria-current="page" href="#">Home</a>
+						        </li>
+
+						        <li class="nav-item dropdown">
+ 						            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						            Discription
+						            </a>
+								          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								            <li><a class="dropdown-item" href="#">STUDIES</a></li>
+								            <li><hr class="dropdown-divider"></li>
+								            <li><a class="dropdown-item" href="#">SSC</a></li>
+								            <li><a class="dropdown-item" href="#">HSSC</a></li>
+								            <li><a class="dropdown-item" href="#">Diploma In M.E.</a></li>
+								            <li><a class="dropdown-item" href="#">Degree In M.E.</a></li>
+								          </ul>
+						        </li>
+
+						        <li class="d-flex">
+							        <a class="nav-link" href="#">About.</a>
+						   	    </li>
+
+				        </ul>
+			    </div>
+			  </div>
+			</nav>
+
+		<br>
+
+		<div class="container" style="background-color: rgb(118, 248, 194) ; height: 510px;">
+	        <div class="row" style="padding-top: 50px;">
+	            <div class="col-lg-8" align="left">
+
+	                <form method="post" action="" onSubmit="return verify()">
+	                	<h6 style="color:rgb(67, 67, 252);">* All Fields Are Mandatory.</h6>
+
+	                        <label for="Fname">First Name:</label>
+	                        <input type="text" class="form-control" id="f_name" placeholder="First Name" name="email">
+	                    
+	                        <label for="Fname">Last Name:</label>
+	                        <input type="text" class="form-control" id="l_name" placeholder="Last Name" name="email">
+	                    
+			                    <tr>
+								       			<td>Gender : </td><br>
+								        		<td> &emsp;  &emsp;  &emsp;  &emsp; <input type="radio" name="gender" value="Male" /> Male
+								        		<br> &emsp;  &emsp;  &emsp;  &emsp; <input type="radio" name="gender" value="Female" />Female
+								        		</td>
+								        	</tr>
+			        	
+						              <br>
+													<label for="cars">Choose Department  :  </label>
+											  		<select id="depart" name="Department">
+													    <option value="Mechanical">Mechanical</option>
+													    <option value="Computer">Computer</option>
+													    <option value="Electronics">Electronics</option>
+													    <option value="Electrical">Electrical</option>
+												  	</select>
+						
+											<br>
+	                 
+	                      <label for="email">Email:</label>
+	                      <input type="email" class="form-control" id="email" placeholder="Your Email" name="email">
+	                 
+	                      <label for="pwd">Password:</label>
+	                      <input type="password" class="form-control" id="pass" placeholder="Your password" name="pswd">
+	                    
+	                    <br>
+	                    <tr>
+					            	<td align="center" colspan="2">
+				                <input type="submit" class="btn btn-primary" value="REGISTER" />
+				                <input type="reset"  class="btn btn-primary" value="CLEAR" />
+			  	              </td>
+			                </tr>
+		                    
+	                  </form>
+	            </div>
+	            <div class="col-lg-4"><h3 id="abc"></h3></div>
+        </div>
+      </div>
+        <br>
 
 
 
-
-</body>
+  </body>
 </html>
