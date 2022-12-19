@@ -16,6 +16,7 @@
 									var depart = document.getElementById("depart");
 									var email = document.getElementById("email");
 									var pass = document.getElementById("pass");
+									var con_pass = document.getElementById("pass2");
 									var msg = new Array();
 									var flag = 1;
 									var message = "Following Details are Required\n";
@@ -51,16 +52,22 @@
 									} else { msg[4] = ""; }
 									
 
-									if(pass.value.length < 8)
+									if(pass.value.length < 8 || con_pass.value.length < 8)
 									{
 										msg[5] = "Password must be 8 characters long";
 										flag = 0;
 									} else { msg[5] = ""; }
+
+									if (pass.value != con_pass.value)
+									{
+										msg[6] = "Password Did Not Match";
+										flag = 0;
+									} else { msg[6] = "";}
 									
 									if(flag == 0)
 									{
 										// Show Error Messages
-										for(var x=0;x<=5;x++)
+										for(var x=0;x<=6;x++)
 										{
 											if(msg[x] != "")
 											{
@@ -119,7 +126,7 @@
 
 		<br>
 
-		<div class="container" style="background-color: rgb(118, 248, 194) ; height: 550px;">
+		<div class="container" style="background-color: rgb(118, 248, 194) ; height: 600px;">
 	        <div class="row" style="padding-top: 50px;">
 	            <div class="col-lg-8" align="left">
 
@@ -157,6 +164,9 @@
 	                 
 	                      <label for="pwd">Password:</label>
 	                      <input type="password" class="form-control" id="pass" placeholder="Your password" name="pswd">
+	                    	
+	                    	<label for="pwd">Confirm Password:</label>
+	                      <input type="password" class="form-control" id="pass2" placeholder="Your password" name="pswd">
 	                    
 	                    <br>
 	                    <tr>
